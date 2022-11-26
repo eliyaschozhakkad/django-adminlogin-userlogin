@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block title %} Login {% endblock title %} 
+{% block content %}
+
+<section class="vh-100" style="background-color: #508bfc">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <h3 class="mb-5">Sign Up</h3>
+            {% for m in messages %}
+              <div class="alert alert-danger" role="alert">{{m}}</div>
+            {% endfor %}
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div class="form-outline mb-4">
+                <input
+                  type="text"
+                  name="first_name"
+                  class="form-control form-control-lg"
+                  required
+                />
+                <label class="form-label">Firstname</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control form-control-lg"
+                  required
+                />
+                <label class="form-label">Email</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input
+                  type="text"
+                  name="username"
+                  class="form-control form-control-lg"
+                  required
+                />
+                <label class="form-label">Username</label>
+              </div>
+              
+
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  name="password1"
+                  
+                  class="form-control form-control-lg"
+                  required
+                />
+                <label class="form-label">Password</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  name="password2"
+                  class="form-control form-control-lg"
+                  required
+                />
+                <label class="form-label">Confirm Password</label>
+              </div>
+
+              <button class="btn btn-primary btn-lg btn-block" type="submit">
+                Register
+              </button>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

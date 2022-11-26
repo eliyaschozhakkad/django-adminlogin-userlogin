@@ -1,0 +1,19 @@
+<h1>Update member</h1>
+
+<form action="" method="post">
+
+  {% csrf_token %} First Name:<br />
+  <input name="firstname" value="{{ localuser.first_name }}" />
+  <br /><br />
+  Username:<br />
+  <input name="username" value="{{ localuser.username }}" />
+  <br /><br />
+  Email:<br />
+  <input name="email" value="{{ localuser.email }}" />
+  <br /><br />
+  {% for m in messages %}
+    <div>{{m}}</div>
+  {% endfor %}
+  
+  <input type="submit" value="Submit" />
+</form>
